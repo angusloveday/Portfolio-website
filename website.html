@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of [Your Name] - Data Analyst">
+  <title>[Your Name]'s Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add the landing page styles to the beginning of the CSS */
+    
+    /* Fullscreen Landing Page */
+    #landing-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #f0f4f8, #d9e3f0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #landing-page h1 {
+      font-size: 3rem;
+      color: #333;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    #landing-page .enter-button {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeIn 2s 0.5s ease-out forwards;
+      transition: background-color 0.3s ease;
+    }
+
+    #landing-page .enter-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Animation for fade-in of the button */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Animation for the heading text */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main content after landing page */
+    #main-content {
+      display: none;
+    }
+
+    /* General page styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e3f0);
+      margin: 0;
+      padding: 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    /* Remaining CSS */
+  </style>
+</head>
+<body>
+
+  <!-- Landing Page Section -->
+  <div id="landing-page">
+    <h1>Welcome to My Portfolio</h1>
+    <button class="enter-button" id="enter-button">Click to Enter</button>
+  </div>
+
+  <!-- Main Content Section (hidden initially) -->
+  <div id="main-content">
+    <header>
+      <h1>[Your Name]</h1>
+      <p>Data Analyst | Problem Solver | Insights Driven</p>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+      <h2>Welcome to My Portfolio</h2>
+      <p>I am a Data Analyst who specializes in transforming data into actionable insights. I help businesses and organizations leverage their data to make informed decisions and drive success.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm [Your Name], a passionate Data Analyst with expertise in data visualization, statistical analysis, and machine learning. I work with large datasets to uncover trends and insights, helping businesses optimize their operations and make data-driven decisions.</p>
+      <p>With a strong background in mathematics and data science, I use tools like Python, SQL, Excel, and Tableau to analyze data and present findings in clear, understandable formats.</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>My Portfolio</h2>
+      <div class="portfolio-grid">
+        <!-- Portfolio Items (e.g., data projects) go here -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>If you'd like to work together or have any questions, feel free to reach out!</p>
+      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p>Phone: [Your Phone Number]</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/yourname" target="_blank">yourname</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
+      <p><a href="#home">Back to Top</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript for showing the main content after the "Click to Enter" button is clicked
+    document.getElementById('enter-button').addEventListener('click', function() {
+      // Fade out the landing page
+      document.getElementById('landing-page').style.opacity = '0';
+      
+      // After the animation, hide the landing page and show the main content
+      setTimeout(function() {
+        document.getElementById('landing-page').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 1000);  // Match the fade-out time (1s)
+    });
+  </script>
+</body>
+</html>
